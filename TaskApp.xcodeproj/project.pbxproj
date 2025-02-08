@@ -14,20 +14,25 @@
 			remoteGlobalIDString = 099EBB3D2D568B3D00A6B76F;
 			remoteInfo = TaskApp;
 		};
-		099EBB592D568B4000A6B76F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 099EBB362D568B3D00A6B76F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 099EBB3D2D568B3D00A6B76F;
-			remoteInfo = TaskApp;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		099EBB3E2D568B3D00A6B76F /* TaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099EBB4E2D568B4000A6B76F /* TaskAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		099EBB582D568B4000A6B76F /* TaskAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		099EBBE62D574F3900A6B76F /* Exceptions for "TaskAppTests" folder in "TaskAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				NetworkTest.swift,
+				TaskRepositoryFailureTest.swift,
+				TaskRepositoryTest.swift,
+				TaskViewModelTest.swift,
+			);
+			target = 099EBB4D2D568B4000A6B76F /* TaskAppTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		099EBB402D568B3D00A6B76F /* TaskApp */ = {
@@ -35,14 +40,12 @@
 			path = TaskApp;
 			sourceTree = "<group>";
 		};
-		099EBB512D568B4000A6B76F /* TaskAppTests */ = {
+		099EBBDF2D574F3900A6B76F /* TaskAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				099EBBE62D574F3900A6B76F /* Exceptions for "TaskAppTests" folder in "TaskAppTests" target */,
+			);
 			path = TaskAppTests;
-			sourceTree = "<group>";
-		};
-		099EBB5B2D568B4000A6B76F /* TaskAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TaskAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,13 +65,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		099EBB552D568B4000A6B76F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,8 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				099EBB402D568B3D00A6B76F /* TaskApp */,
-				099EBB512D568B4000A6B76F /* TaskAppTests */,
-				099EBB5B2D568B4000A6B76F /* TaskAppUITests */,
+				099EBBDF2D574F3900A6B76F /* TaskAppTests */,
 				099EBB3F2D568B3D00A6B76F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +82,6 @@
 			children = (
 				099EBB3E2D568B3D00A6B76F /* TaskApp.app */,
 				099EBB4E2D568B4000A6B76F /* TaskAppTests.xctest */,
-				099EBB582D568B4000A6B76F /* TaskAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,38 +124,12 @@
 			dependencies = (
 				099EBB502D568B4000A6B76F /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				099EBB512D568B4000A6B76F /* TaskAppTests */,
-			);
 			name = TaskAppTests;
 			packageProductDependencies = (
 			);
 			productName = TaskAppTests;
 			productReference = 099EBB4E2D568B4000A6B76F /* TaskAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		099EBB572D568B4000A6B76F /* TaskAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 099EBB682D568B4000A6B76F /* Build configuration list for PBXNativeTarget "TaskAppUITests" */;
-			buildPhases = (
-				099EBB542D568B4000A6B76F /* Sources */,
-				099EBB552D568B4000A6B76F /* Frameworks */,
-				099EBB562D568B4000A6B76F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				099EBB5A2D568B4000A6B76F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				099EBB5B2D568B4000A6B76F /* TaskAppUITests */,
-			);
-			name = TaskAppUITests;
-			packageProductDependencies = (
-			);
-			productName = TaskAppUITests;
-			productReference = 099EBB582D568B4000A6B76F /* TaskAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -177,10 +145,6 @@
 						CreatedOnToolsVersion = 16.2;
 					};
 					099EBB4D2D568B4000A6B76F = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 099EBB3D2D568B3D00A6B76F;
-					};
-					099EBB572D568B4000A6B76F = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 099EBB3D2D568B3D00A6B76F;
 					};
@@ -202,7 +166,6 @@
 			targets = (
 				099EBB3D2D568B3D00A6B76F /* TaskApp */,
 				099EBB4D2D568B4000A6B76F /* TaskAppTests */,
-				099EBB572D568B4000A6B76F /* TaskAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +179,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		099EBB4C2D568B4000A6B76F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		099EBB562D568B4000A6B76F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +202,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		099EBB542D568B4000A6B76F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +209,6 @@
 			isa = PBXTargetDependency;
 			target = 099EBB3D2D568B3D00A6B76F /* TaskApp */;
 			targetProxy = 099EBB4F2D568B4000A6B76F /* PBXContainerItemProxy */;
-		};
-		099EBB5A2D568B4000A6B76F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 099EBB3D2D568B3D00A6B76F /* TaskApp */;
-			targetProxy = 099EBB592D568B4000A6B76F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -484,40 +428,6 @@
 			};
 			name = Release;
 		};
-		099EBB692D568B4000A6B76F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7JV54P3SL3;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.guru.TaskAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TaskApp;
-			};
-			name = Debug;
-		};
-		099EBB6A2D568B4000A6B76F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7JV54P3SL3;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.guru.TaskAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TaskApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -544,15 +454,6 @@
 			buildConfigurations = (
 				099EBB662D568B4000A6B76F /* Debug */,
 				099EBB672D568B4000A6B76F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		099EBB682D568B4000A6B76F /* Build configuration list for PBXNativeTarget "TaskAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				099EBB692D568B4000A6B76F /* Debug */,
-				099EBB6A2D568B4000A6B76F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

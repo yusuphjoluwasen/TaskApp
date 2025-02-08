@@ -11,12 +11,27 @@ enum TaskApi{
 }
 
 extension TaskApi:EndPointType{
+    var name: String {
+        switch self {
+        case .nextpath:
+            return ApiConstants.nextpath
+        case .responsecode:
+            return ApiConstants.responsecode
+        }
+    }
+    
     var url: String {
         switch self {
         case .nextpath:
-            return Constants.root
+            return ApiConstants.root
         case .responsecode(let url):
             return url
         }
     }
+}
+
+enum ApiConstants {
+    static let nextpath = "nextpath"
+    static let responsecode = "responsecode"
+    static let root = "http://localhost:8000"
 }

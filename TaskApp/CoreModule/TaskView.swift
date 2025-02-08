@@ -31,6 +31,9 @@ struct TaskView: View {
                 .font(.footnote)
         }
         .padding()
+        .onAppear{
+            viewModel.loadStoredData()
+        }
     }
 }
 

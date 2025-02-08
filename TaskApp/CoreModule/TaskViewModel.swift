@@ -20,11 +20,12 @@ final class TaskViewModel:ObservableObject{
     
     init(repo: TaskExecuteProtocol) {
         self.repo = repo
-        loadStoredData()
     }
     
     func fetchTask(){
         loading = true
+        error = ""
+        
         repo.executeTask()
             .receive(on: RunLoop.main)
             .sink { [weak self] completion in
@@ -44,17 +45,17 @@ final class TaskViewModel:ObservableObject{
     }
     
     // Loads stored fetch count and last response code from Storage
-    private func loadStoredData() {
+    func loadStoredData() {
         fetchCount = storage.getFetchCount()
         responseCode = storage.getResponseCode()
     }
     
-    private func updateData(with newResponseCode: String?) {
+    func updateData(with newResponseCode: String?) {
         responseCode = newResponseCode.orEmpty
         incrementFetchCount()
     }
     
-    private func incrementFetchCount() {
+    func incrementFetchCount() {
         fetchCount += 1
     }
     
