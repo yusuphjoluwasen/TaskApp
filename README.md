@@ -11,19 +11,19 @@ The app allows users to retrieve a **unique response code** from a backend API w
 - Dependency Injection
 
 ### Project Structure  
-📂 **View** – SwiftUI Views (`TaskView`, `TaskItemView`, `TaskButtonView`)  
-📂 **ViewModel** – Handles API calls and state updates (`TaskViewModel`)  
-📂 **Model** – Defines data structures (`NextPathModel`, `ResponseCodeModel`)  
-📂 **Repository** – Manages API interactions (`TaskRepository`)  
-📂 **Networking** – Handles network requests (`Network`, `MockNetwork`)  
-📂 **Storage** – Manages data persistence (`StorageManager`)  
+📂 **View** 
+📂 **ViewModel** 
+📂 **Model** – 
+📂 **Repository** 
+📂 **Networking** 
+📂 **Storage** 
 
 ## Running the Project  
 
 ### 📌 Prerequisites  
 - **Xcode 15+**  
 - **Swift 5.8+**
-- **ioS 18+**  
+- **iOS 18+**  
 - **macOS 13+**  
 
 ### 📌 Steps  
