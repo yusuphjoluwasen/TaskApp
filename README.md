@@ -15,9 +15,9 @@ The application is built using
 
 ### Project Structure  
 - 📂 **App**: Contains high-level app setup files: it act as entry point and where dependencies are being composed 
-- 📂 **Components**: Stores reusable UI components 
-- 📂 **CoreModule**: Contains business logic, models, and core functionalities
-- 📂 **Infrastructure**: Contains low-level external system-related components such as networking and storagemanager  
+- 📂 **Components**: stores reusable UI components 
+- 📂 **CoreModule**: contain business logic, models, and core functionalities
+- 📂 **Infrastructure**: contain low-level external system-related components such as networking and storagemanager  
 
 ## Running the Project  
 
