@@ -1,14 +1,17 @@
 ## TaskApp 🚀
 
 ### Overview  
-The app lets users fetch a unique response code from a backend API and keep track of how many times data has been retrieved. It also saves this data to UserDefaults, ensuring it remains available even after restarting the app.
+The app lets users fetch a unique response code from a backend API and keep track of how many times data has been retrieved. It saves data to UserDefaults, to ensure it remains available even after restarting the app.
 
-### Tech Stack  
-- SwiftUI  
+### Tech Stack 
+The application is built using
+- SwiftUI
+- Swift
 - Combine
 - UserDefaults  
-- XCTest  
-- Dependency Injection
+- XCTest
+- iOS 16+
+- Xcode 16.2  
 
 ### Project Structure  
 - 📂 **App**  
@@ -17,12 +20,6 @@ The app lets users fetch a unique response code from a backend API and keep trac
 - 📂 **Infrastructure**   
 
 ## Running the Project  
-
-### 📌 Prerequisites  
-- **Xcode 15+**  
-- **Swift 5.8+**
-- **iOS 18+**  
-- **macOS 13+**  
 
 ### 📌 Steps  
 1. Clone the repository:  
