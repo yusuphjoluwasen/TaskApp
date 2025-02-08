@@ -26,12 +26,6 @@ The app allows users to retrieve a **unique response code** from a backend API w
 📂 **Networking** – Handles network requests (`Network`, `MockNetwork`)  
 📂 **Storage** – Manages data persistence (`StorageManager`)  
 
-### How It Works  
-1. Tap the **"Fetch"** button to request a **new response code** from the server.  
-2. The app retrieves the correct API endpoint and fetches the **response code**.  
-3. The **fetch count** increments, and data is **persisted locally**.  
-4. The UI updates **automatically** using **SwiftUI & Combine**.  
-
 ## Running the Project  
 
 ### 📌 Prerequisites  
