@@ -14,10 +14,10 @@ The application is built using
 - Xcode 16.2  
 
 ### Project Structure  
-- 📂 **App**  
-- 📂 **Components**  
-- 📂 **CoreModule**  
-- 📂 **Infrastructure**   
+- 📂 **App**: Contains high-level app setup files: it act as entry point and where dependencies are being composed 
+- 📂 **Components**: Stores reusable UI components 
+- 📂 **CoreModule**: Contains business logic, models, and core functionalities
+- 📂 **Infrastructure**: Contains low-level external system-related components such as networking and storagemanager  
 
 ## Running the Project  
 
