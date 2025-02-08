@@ -29,7 +29,7 @@ final class TaskViewModel: ObservableObject {
     private let storage = StorageManager.shared
 
     /// **Output Subscribers**
-
+    /// 
     /// The number of times a task has been fetched.
     @Published var fetchCount: Int = 0
 
