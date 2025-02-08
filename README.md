@@ -22,7 +22,7 @@ The application is built using
 ## Running the Project  
 
 ### 📌 Steps  
-1. Clone the repository:  
+Clone the repository:  
    ```sh
    git clone https://github.com/yusuphjoluwasen/TaskApp.git
    cd TaskApp
