@@ -11,12 +11,10 @@ The app lets users fetch a unique response code from a backend API and keep trac
 - Dependency Injection
 
 ### Project Structure  
-- 📂 **View**  
-- 📂 **ViewModel**  
-- 📂 **Model**  
-- 📂 **Repository**  
-- 📂 **Networking**  
-- 📂 **Storage**  
+- 📂 **App**  
+- 📂 **Components**  
+- 📂 **CoreModule**  
+- 📂 **Infrastructure**   
 
 ## Running the Project  
 
