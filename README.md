@@ -27,3 +27,5 @@ The application is built using
    git clone https://github.com/yusuphjoluwasen/TaskApp.git
    cd TaskApp
 
+Note: Ensure server is running on http://localhost:8000
+
