@@ -15,7 +15,7 @@ import Foundation
 class DependencyManager{
     func makeTaskViewModel() -> TaskViewModel{
         let network = Network()
-        let repo:TaskExecuteProtocol = TaskRepository(service: network)
+        let repo = TaskRepository(service: network)
         return TaskViewModel(repo: repo)
     }
 }

@@ -16,6 +16,7 @@ final class TaskViewModel:ObservableObject{
     
     private let repo: TaskExecuteProtocol
     private var cancellables = Set<AnyCancellable>()
+    private let storage = StorageManager.shared
     
     init(repo: TaskExecuteProtocol) {
         self.repo = repo
@@ -42,45 +43,22 @@ final class TaskViewModel:ObservableObject{
             .store(in: &cancellables)
     }
     
-    /// Loads both fetch count and last stored response code from UserDefaults
+    // Loads stored fetch count and last response code from Storage
     private func loadStoredData() {
-        fetchCount = getFetchCountFromDB()
-        responseCode = getResponseCodeFromDB()
+        fetchCount = storage.getFetchCount()
+        responseCode = storage.getResponseCode()
     }
     
     private func updateData(with newResponseCode: String?) {
-        responseCode = newResponseCode ?? ""
+        responseCode = newResponseCode.orEmpty
         incrementFetchCount()
-    }
-    
-    private func loadFetchCount(){
-        fetchCount = getFetchCountFromDB()
     }
     
     private func incrementFetchCount() {
         fetchCount += 1
     }
     
-    private func getFetchCountFromDB() -> Int{
-        return UserDefaults.standard.integer(forKey: Constants.fetchCountKey)
-    }
-    
-    /// Retrieves the last stored response code from UserDefaults
-    private func getResponseCodeFromDB() -> String {
-        return UserDefaults.standard.string(forKey: Constants.responseCodeKey) ?? "No Response Yet"
-    }
-    
-    
-    private func storeFetchCountToDB(_ count:Int) {
-        UserDefaults.standard.set(count, forKey: Constants.fetchCountKey)
-    }
-    
-    private func storeResponseCodeToDB(_ code: String) {
-        UserDefaults.standard.set(code, forKey: Constants.responseCodeKey)
-    }
-    
     private func storeDataToDB() {
-        UserDefaults.standard.set(fetchCount, forKey: Constants.fetchCountKey)
-        UserDefaults.standard.set(responseCode, forKey: Constants.responseCodeKey)
+        storage.storeData(fetchCount: fetchCount, responseCode: responseCode)
     }
 }

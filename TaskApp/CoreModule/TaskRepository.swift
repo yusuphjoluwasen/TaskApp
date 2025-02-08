@@ -38,11 +38,8 @@ final class TaskRepository:TaskRepositoryProtocol{
     
     func executeTask() -> AnyPublisher<ResponseCodeModel, Error> {
         return fetchNextPath()
-            .flatMap { [weak self] res -> AnyPublisher<ResponseCodeModel, Error> in
-                guard let self = self else {
-                    return Fail(error: NetworkServiceError.genericError("TaskRepository deallocated")).eraseToAnyPublisher()
-                }
-                return self.fetchResponsecode(res.nextPath ?? "")
+            .flatMap { [unowned self] res -> AnyPublisher<ResponseCodeModel, Error> in
+                return fetchResponsecode(res.nextPath.orEmpty)
             }
             .eraseToAnyPublisher()
     }

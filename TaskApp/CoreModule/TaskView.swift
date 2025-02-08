@@ -25,6 +25,10 @@ struct TaskView: View {
                     viewModel.fetchTask()
                 })
             }
+            
+            Text(viewModel.error)
+                .foregroundColor(.red)
+                .font(.footnote)
         }
         .padding()
     }
