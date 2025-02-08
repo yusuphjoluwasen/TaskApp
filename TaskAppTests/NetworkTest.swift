@@ -13,13 +13,12 @@ class MockNetworkTests: XCTestCase {
     private var cancellables = Set<AnyCancellable>()
 
     override func setUp() {
-        super.setUp()
         mockNetwork = MockNetwork()
     }
 
     override func tearDown() {
         mockNetwork = nil
-        super.tearDown()
+        cancellables = []
     }
 
     func testFetchNextPath() {

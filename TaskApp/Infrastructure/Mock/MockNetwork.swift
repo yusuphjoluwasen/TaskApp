@@ -32,14 +32,12 @@ final class MockNetwork: NetworkProtocol {
             }
 
             return Just(fileUrl)
+                .setFailureType(to: Error.self)
                 .tryMap { string in
                     guard let data = try? Data(contentsOf: string) else {
                         fatalError("Failed to load \(url) from bundle.")
                     }
                     return data
-                }
-                .mapError { error in
-                    return error
                 }
                 .eraseToAnyPublisher()
         }

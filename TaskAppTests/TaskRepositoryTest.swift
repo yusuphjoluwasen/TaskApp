@@ -15,13 +15,13 @@ final class TaskRepositoryTest: XCTestCase {
     private var taskRepository: TaskRepositoryProtocol!
 
     override func setUp() {
-        super.setUp()
         taskRepository = TaskRepository(service: mockNetwork)
+        cancellables = []
     }
 
     override func tearDown() {
         taskRepository = nil
-        super.tearDown()
+        cancellables = []
     }
 
     func testFetchNextPath() {
