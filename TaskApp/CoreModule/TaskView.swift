@@ -9,29 +9,30 @@ import SwiftUI
 
 struct TaskView: View {
     @StateObject var viewModel: TaskViewModel
-    
+
     var body: some View {
-        VStack(alignment:.leading) {
-            
+        VStack(alignment: .leading) {
+
             TaskItemView(itemLabel: Constants.responseCode, itemValue: viewModel.responseCode)
-            
+
             TaskItemView(itemLabel: Constants.timesFetched, itemValue: String(viewModel.fetchCount))
                 .padding(.vertical)
-            
-            if viewModel.loading{
+
+            if viewModel.loading {
                 ProgressView()
-            }else{
+            } else {
                 TaskButtonView(action: {
                     viewModel.fetchTask()
                 })
             }
-            
+
             Text(viewModel.error)
                 .foregroundColor(.red)
                 .font(.footnote)
+                .padding(.top)
         }
         .padding()
-        .onAppear{
+        .onAppear {
             viewModel.loadStoredData()
         }
     }
@@ -40,4 +41,3 @@ struct TaskView: View {
 #Preview {
     TaskView(viewModel: TaskViewModel(repo: TaskRepository(service: Network())))
 }
-

@@ -7,10 +7,10 @@
 import Foundation
 
 final class StorageManager {
-    static let shared = StorageManager() // Singleton instance
-    
-    private init() {} // Prevent instantiation outside of `shared`
-    
+    static let shared = StorageManager()
+
+    private init() {}
+
     func getFetchCount() -> Int {
         return UserDefaults.standard.integer(forKey: Constants.fetchCountKey)
     }
@@ -26,7 +26,7 @@ final class StorageManager {
     func storeResponseCode(_ code: String) {
         UserDefaults.standard.set(code, forKey: Constants.responseCodeKey)
     }
-    
+
     func storeData(fetchCount: Int, responseCode: String) {
         storeFetchCount(fetchCount)
         storeResponseCode(responseCode)

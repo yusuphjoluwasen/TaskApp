@@ -5,12 +5,12 @@
 //  Created by Guru King on 08/02/2025.
 //
 
-enum TaskApi{
+enum TaskApi {
     case nextpath
     case responsecode(String)
 }
 
-extension TaskApi:EndPointType{
+extension TaskApi: EndPointType {
     var name: String {
         switch self {
         case .nextpath:
@@ -19,7 +19,7 @@ extension TaskApi:EndPointType{
             return ApiConstants.responsecode
         }
     }
-    
+
     var url: String {
         switch self {
         case .nextpath:

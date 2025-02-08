@@ -13,20 +13,20 @@ final class TaskRepositoryTest: XCTestCase {
     private var cancellables = Set<AnyCancellable>()
     private var mockNetwork = MockNetwork()
     private var taskRepository: TaskRepositoryProtocol!
-    
+
     override func setUp() {
         super.setUp()
         taskRepository = TaskRepository(service: mockNetwork)
     }
-    
+
     override func tearDown() {
         taskRepository = nil
         super.tearDown()
     }
-    
+
     func testFetchNextPath() {
         let expectation = XCTestExpectation(description: "Fetch Next Path")
-        
+
         taskRepository.fetchNextPath()
             .sink { completion in
                 if case .failure(let error) = completion {
@@ -37,13 +37,13 @@ final class TaskRepositoryTest: XCTestCase {
                 expectation.fulfill()
             }
             .store(in: &cancellables)
-        
+
         wait(for: [expectation], timeout: 1.0)
     }
-    
+
     func testFetchResponseCode() {
         let expectation = XCTestExpectation(description: "Fetch Response Code")
-        
+
         taskRepository.fetchResponsecode("responsecode")
             .sink { completion in
                 if case .failure(let error) = completion {
@@ -55,13 +55,13 @@ final class TaskRepositoryTest: XCTestCase {
                 expectation.fulfill()
             }
             .store(in: &cancellables)
-        
+
         wait(for: [expectation], timeout: 1.0)
     }
-    
+
     func testExecuteTask() {
         let expectation = XCTestExpectation(description: "Fetch Response Code")
-        
+
         taskRepository.executeTask()
             .sink { completion in
                 if case .failure(let error) = completion {
@@ -73,27 +73,27 @@ final class TaskRepositoryTest: XCTestCase {
                 expectation.fulfill()
             }
             .store(in: &cancellables)
-        
+
         wait(for: [expectation], timeout: 1.0)
     }
-    
+
     func testExecuteTaskFailure() {
         let expectation = XCTestExpectation(description: "Execute Task should fail")
-        
+
         let mockNetwork = MockNetworkFailure()
         let repository = TaskRepository(service: mockNetwork)
-        
+
         repository.executeTask()
             .sink { completion in
                 if case .failure(let error) = completion {
                     XCTAssertEqual(error.localizedDescription, "should fail")
                     expectation.fulfill()
                 }
-            } receiveValue: { (response: ResponseCodeModel) in
+            } receiveValue: { (_: ResponseCodeModel) in
                 XCTFail("Expected failure but received value instead")
             }
             .store(in: &cancellables)
-        
+
         wait(for: [expectation], timeout: 1.0)
     }
 }

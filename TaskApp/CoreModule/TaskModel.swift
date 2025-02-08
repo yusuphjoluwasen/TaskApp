@@ -5,12 +5,11 @@
 //  Created by Guru King on 08/02/2025.
 //
 
-struct NextPathModel:Codable {
+struct NextPathModel: Codable {
     var nextPath: String?
 }
 
-struct ResponseCodeModel:Codable {
-    var path:String?
+struct ResponseCodeModel: Codable {
+    var path: String?
     var responseCode: String?
 }
-

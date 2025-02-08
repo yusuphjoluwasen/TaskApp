@@ -16,15 +16,15 @@ class MockNetworkTests: XCTestCase {
         super.setUp()
         mockNetwork = MockNetwork()
     }
-    
+
     override func tearDown() {
         mockNetwork = nil
         super.tearDown()
     }
-    
+
     func testFetchNextPath() {
         let expectation = XCTestExpectation(description: "Fetch next path")
-        
+
         mockNetwork.call(request: TaskApi.nextpath)
             .sink { completion in
                 if case .failure(let error) = completion {
@@ -35,13 +35,13 @@ class MockNetworkTests: XCTestCase {
                 expectation.fulfill()
             }
             .store(in: &cancellables)
-        
+
         wait(for: [expectation], timeout: 1.0)
     }
 
     func testFetchResponseCode() {
         let expectation = XCTestExpectation(description: "Fetch Response Code")
-        
+
        mockNetwork.call(request: TaskApi.responsecode("responseCode"))
             .sink { completion in
                 if case .failure(let error) = completion {
@@ -53,10 +53,10 @@ class MockNetworkTests: XCTestCase {
                 expectation.fulfill()
             }
             .store(in: &cancellables)
-        
+
         wait(for: [expectation], timeout: 1.0)
     }
-    
+
     func testFailureForMissingResource() {
         let expectation = XCTestExpectation(description: "Resource doesn't exist")
 
@@ -66,11 +66,11 @@ class MockNetworkTests: XCTestCase {
                     XCTAssertEqual(error.localizedDescription, "Invalid URL. Unable to proceed with the request.")
                     expectation.fulfill()
                 }
-            } receiveValue: { (response: ResponseCodeModel) in
+            } receiveValue: { (_: ResponseCodeModel) in
                 XCTFail("Expected failure but received value instead")
             }
             .store(in: &cancellables)
-        
+
         wait(for: [expectation], timeout: 1.0)
     }
 }
