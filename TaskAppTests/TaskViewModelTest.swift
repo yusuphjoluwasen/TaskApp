@@ -17,10 +17,16 @@ final class TaskViewModelTest: XCTestCase {
     private var viewModel: TaskViewModel!
 
     override func setUp() {
-        super.setUp()
         mockNetwork = MockNetwork()
         repository = TaskRepository(service: mockNetwork)
         viewModel = TaskViewModel(repo: repository)
+    }
+    
+    override func tearDown() {
+        viewModel = nil
+        repository = nil
+        mockNetwork = nil
+        cancelables = []
     }
 
     func testViewModelInit() {
@@ -92,12 +98,5 @@ final class TaskViewModelTest: XCTestCase {
         }
 
         wait(for: [expectation], timeout: 1.0)
-    }
-
-    override func tearDown() {
-        viewModel = nil
-        repository = nil
-        mockNetwork = nil
-        super.tearDown()
     }
 }
