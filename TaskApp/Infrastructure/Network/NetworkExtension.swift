@@ -6,10 +6,11 @@
 //
 
 import Foundation
-//why i have error types and exolanation of each code
+//why i have error types
 
 protocol EndPointType{
     var url:String {get}
+    var name:String {get}
 }
 
 enum NetworkServiceError: Error {
@@ -20,23 +21,31 @@ enum NetworkServiceError: Error {
     case noInternetConnection
     case timeout
     case genericError(String)
+}
 
-    var localizedDescription: String {
+extension NetworkServiceError: LocalizedError {
+    var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return "Invalid URL. Unable to proceed with the request."
+            return NSLocalizedString("Invalid URL. Unable to proceed with the request.",
+                                     comment: "Error message for invalid URL")
         case .decodingError:
-            return "Failed to decode the response. Data format might be incorrect."
+            return NSLocalizedString("Failed to decode the response. Data format might be incorrect.",
+                                     comment: "Error message when decoding JSON fails")
         case .serverError:
-            return "Invalid server response."
+            return NSLocalizedString("Invalid server response.",
+                                     comment: "Error message for unexpected server response")
         case .invalidResponseCode(let code):
-            return "Received invalid response code: \(code). Expected 200-299."
+            return String(format: NSLocalizedString("Received invalid response code: %d.",
+                                                    comment: "Error message for invalid HTTP response codes"), code)
         case .noInternetConnection:
-            return "No internet connection. Please check your network settings."
+            return NSLocalizedString("No internet connection. Please check your network settings.",
+                                     comment: "Error message when there is no internet connection")
         case .timeout:
-            return "Request timed out. The server took too long to respond."
+            return NSLocalizedString("Request timed out. The server took too long to respond.",
+                                     comment: "Error message when request exceeds timeout limit")
         case .genericError(let error):
-            return error
+            return NSLocalizedString(error, comment: "Generic error message")
         }
     }
 }
@@ -48,3 +57,4 @@ extension JSONDecoder {
             return decoder
         }
 }
+
