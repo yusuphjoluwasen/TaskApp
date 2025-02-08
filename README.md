@@ -13,7 +13,7 @@ The app lets users fetch a unique response code from a backend API and keep trac
 ### Project Structure  
 📂 **View** 
 📂 **ViewModel** 
-📂 **Model** – 
+📂 **Model** 
 📂 **Repository** 
 📂 **Networking** 
 📂 **Storage** 
