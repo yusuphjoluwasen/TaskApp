@@ -1,7 +1,7 @@
 ## TaskApp 🚀
 
 ### Overview  
-The app allows users to retrieve a **unique response code** from a backend API while tracking the number of times data has been fetched. It also ensures persistence using **UserDefaults**, maintaining the data across app restarts. 
+The app lets users fetch a unique response code from a backend API and keep track of how many times data has been retrieved. It also saves this data to UserDefaults, ensuring it remains available even after restarting the app.
 
 ### Tech Stack  
 - SwiftUI  
