@@ -1,15 +1,7 @@
 ## TaskApp 🚀
 
 ### Overview  
-The app allows users to retrieve a **unique response code** from a backend API while tracking the number of times data has been fetched. It also ensures persistence using **UserDefaults**, maintaining the data across app restarts.
-
-### Key Features  
-✅ Fetches a **response code** dynamically from an API  
-✅ Displays the **number of times data has been fetched**  
-✅ Uses **Combine** for reactive API handling  
-✅ Implements **Dependency Injection** for better testability  
-✅ Stores fetched data using **UserDefaults** for persistence  
-✅ Includes **unit tests** with **mock network responses**  
+The app allows users to retrieve a **unique response code** from a backend API while tracking the number of times data has been fetched. It also ensures persistence using **UserDefaults**, maintaining the data across app restarts. 
 
 ### Tech Stack  
 - SwiftUI  
