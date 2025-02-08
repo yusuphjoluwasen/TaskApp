@@ -31,7 +31,7 @@ The app allows users to retrieve a **unique response code** from a backend API w
 ### 📌 Prerequisites  
 - **Xcode 15+**  
 - **Swift 5.8+**
-- - **ioS 18+**  
+- **ioS 18+**  
 - **macOS 13+**  
 
 ### 📌 Steps  
