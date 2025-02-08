@@ -24,4 +24,3 @@ struct TaskItemView: View {
 #Preview {
     TaskItemView(itemLabel: "Item Label:", itemValue: "Item Value")
 }
-

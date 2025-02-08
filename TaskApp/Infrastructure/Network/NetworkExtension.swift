@@ -6,11 +6,10 @@
 //
 
 import Foundation
-//why i have error types
 
-protocol EndPointType{
-    var url:String {get}
-    var name:String {get}
+protocol EndPointType {
+    var url: String {get}
+    var name: String {get}
 }
 
 enum NetworkServiceError: Error {
@@ -57,4 +56,3 @@ extension JSONDecoder {
             return decoder
         }
 }
-

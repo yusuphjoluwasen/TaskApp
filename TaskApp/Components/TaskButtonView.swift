@@ -7,14 +7,14 @@
 import SwiftUI
 
 struct TaskButtonView: View {
-    var action:() -> Void
+    var action: () -> Void
     var body: some View {
         Button(action: action, label: {
             Text(Constants.buttonTitle)
                 .font(.subheadline)
                 .foregroundStyle(.text)
         })
-        .frame(maxWidth:.infinity)
+        .frame(maxWidth: .infinity)
         .padding()
         .background(.button)
         .cornerRadius(20)

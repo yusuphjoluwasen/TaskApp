@@ -5,7 +5,7 @@
 //  Created by Guru King on 08/02/2025.
 //
 
-enum Constants{
+enum Constants {
     static let responseCode = "ResponseCode:"
     static let timesFetched = "Times Fetched:"
     static let buttonTitle = "Fetch"

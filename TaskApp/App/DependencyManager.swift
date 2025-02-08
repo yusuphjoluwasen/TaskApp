@@ -9,11 +9,13 @@ import Foundation
 
 /// Dependency Manager
 /// creates the task view model object required by the view
-///it passes the required network dependency to the repository
+/// it passes the required network dependency to the repository
 /// it creates the required repository for the view model
 /// it aids the dependency inversion pricniple
-class DependencyManager{
-    func makeTaskViewModel() -> TaskViewModel{
+final class DependencyManager {
+    static let shared = DependencyManager()
+
+    func makeTaskViewModel() -> TaskViewModel {
         let network = Network()
         let repo = TaskRepository(service: network)
         return TaskViewModel(repo: repo)
