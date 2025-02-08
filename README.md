@@ -1,9 +1,9 @@
-# TaskApp 🚀
+## TaskApp 🚀
 
-## Overview  
-TaskApp is a lightweight SwiftUI application that demonstrates fetching and displaying data using **Combine** and **SwiftUI**. The app allows users to retrieve a **unique response code** from a backend API while tracking the number of times data has been fetched. It also ensures persistence using **UserDefaults**, maintaining the data across app restarts.
+### Overview  
+The app allows users to retrieve a **unique response code** from a backend API while tracking the number of times data has been fetched. It also ensures persistence using **UserDefaults**, maintaining the data across app restarts.
 
-## Key Features  
+### Key Features  
 ✅ Fetches a **response code** dynamically from an API  
 ✅ Displays the **number of times data has been fetched**  
 ✅ Uses **Combine** for reactive API handling  
@@ -11,14 +11,14 @@ TaskApp is a lightweight SwiftUI application that demonstrates fetching and disp
 ✅ Stores fetched data using **UserDefaults** for persistence  
 ✅ Includes **unit tests** with **mock network responses**  
 
-## Tech Stack  
-- **SwiftUI** – For a declarative UI experience  
-- **Combine** – For reactive programming and state management  
-- **UserDefaults** – For lightweight data persistence  
-- **XCTest** – For unit testing with **mock network calls**  
-- **Dependency Injection** – For modular and testable code  
+### Tech Stack  
+- SwiftUI  
+- Combine
+- UserDefaults  
+- XCTest  
+- Dependency Injection
 
-## Project Structure  
+### Project Structure  
 📂 **View** – SwiftUI Views (`TaskView`, `TaskItemView`, `TaskButtonView`)  
 📂 **ViewModel** – Handles API calls and state updates (`TaskViewModel`)  
 📂 **Model** – Defines data structures (`NextPathModel`, `ResponseCodeModel`)  
@@ -26,7 +26,7 @@ TaskApp is a lightweight SwiftUI application that demonstrates fetching and disp
 📂 **Networking** – Handles network requests (`Network`, `MockNetwork`)  
 📂 **Storage** – Manages data persistence (`StorageManager`)  
 
-## How It Works  
+### How It Works  
 1. Tap the **"Fetch"** button to request a **new response code** from the server.  
 2. The app retrieves the correct API endpoint and fetches the **response code**.  
 3. The **fetch count** increments, and data is **persisted locally**.  
@@ -36,12 +36,13 @@ TaskApp is a lightweight SwiftUI application that demonstrates fetching and disp
 
 ### 📌 Prerequisites  
 - **Xcode 15+**  
-- **Swift 5.8+**  
+- **Swift 5.8+**
+- - **ioS 18+**  
 - **macOS 13+**  
 
 ### 📌 Steps  
 1. Clone the repository:  
    ```sh
-   git clone https://github.com/your-username/TaskApp.git
+   git clone https://github.com/yusuphjoluwasen/TaskApp.git
    cd TaskApp
 
