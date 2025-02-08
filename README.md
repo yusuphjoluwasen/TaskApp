@@ -1,4 +1,4 @@
-# TaskApp - SwiftUI & Combine-Based API Fetching App 🚀
+# TaskApp 🚀
 
 ## Overview  
 TaskApp is a lightweight SwiftUI application that demonstrates fetching and displaying data using **Combine** and **SwiftUI**. The app allows users to retrieve a **unique response code** from a backend API while tracking the number of times data has been fetched. It also ensures persistence using **UserDefaults**, maintaining the data across app restarts.
