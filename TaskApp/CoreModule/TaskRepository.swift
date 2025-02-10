@@ -73,7 +73,6 @@ final class TaskRepository: TaskRepositoryProtocol {
     /// - First, calls `fetchNextPath()` to get the next API endpoint.
     /// - Then, it passes the retrieved path to `fetchResponsecode(_:)` to get the response code.
     /// - Uses `flatMap` to ensure that the second request only starts after the first one succeeds
-    /// .`flatMap` helps to combine both the operations of both fetchNextPath and fetchResponsecode
     /// - The result is returned as a `ResponseCodeModel` publisher.
     ///
     /// - Returns: A publisher that emits a `ResponseCodeModel` or an error.
