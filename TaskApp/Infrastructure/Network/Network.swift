@@ -44,7 +44,7 @@ final class Network: NetworkProtocol {
             .tryMap(validateResponse)
             .decode(type: Response.self, decoder: JSONDecoder.snakeCaseConverting)
             .mapError(handleError)
-            .retry(1) // Retries the request once before failing
+            .retry(1) 
             .eraseToAnyPublisher()
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 /// creates the task view model object required by the view
 /// it passes the required network dependency to the repository
 /// it creates the required repository for the view model
-/// it aids the dependency inversion pricniple
+/// it aids the dependency inversion principle
 final class DependencyManager {
     static let shared = DependencyManager()
 

@@ -31,7 +31,6 @@ enum NetworkServiceError: Error {
 
 /// **Localized Error Descriptions**
 /// Provides human-readable descriptions for each `NetworkServiceError` case.
-/// - Supports localization for better user experience in different languages.
 extension NetworkServiceError: LocalizedError {
     var errorDescription: String? {
         switch self {
